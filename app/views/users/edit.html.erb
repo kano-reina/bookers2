@@ -1,12 +1,12 @@
 <div>
   <h2>User info</h2>
   <%= form_with model: @user do |f| %>
-    <label>Name</label>
+    <p>Name</p>
     <%= f.text_field :name, autofocus: true %>
-    <label>Image</label>
+    <p>Image</p>
     <%= f.file_field :profile_image, accept: "image/*" %>
-    <label>Introduction</label> 
+    <p>Introduction</p> 
     <%= f.text_field :introduction %>
-    <%= f.submit 'Update User' %>
+    <p><%= f.submit 'Update User' %></p>
   <% end %>
 </div>

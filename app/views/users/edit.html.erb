@@ -2,7 +2,7 @@
   <h2>User info</h2>
   <%= form_with model: @user do |f| %>
     <label>Name</label>
-    <%= f.string_field :name, autofocus: true %>
+    <%= f.text_field :name, autofocus: true %>
     <label>Image</label>
     <%= f.file_field :profile_image, accept: "image/*" %>
     <label>Introduction</label> 

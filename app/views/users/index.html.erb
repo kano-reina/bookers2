@@ -1,9 +1,9 @@
 <div>
   <h2>User info</h2>
-  <%= image_tag current_user.get_profile_image(100, 100) %>
+  <%= image_tag @user.get_profile_image(100, 100) %>
   <table>
-    <tr><th>name</th><td><%= current_user.name %></td></tr>
-    <tr><th>introduction</th><td><%= current_user.introduction %></td></tr>
+    <tr><th>name</th><td><%= @user.name %></td></tr>
+    <tr><th>introduction</th><td><%= @user.introduction %></td></tr>
   </table>
 </div>
 
@@ -12,7 +12,7 @@
 <div>
   <h2>New book</h2>
   <%= form_with model: @book do |f| %>
-    <p>Title</hp>
+    <p>Title</p>
     <%= f.text_field :title %>
     <p>Opinion</p>
     <%= f.text_area :body %>

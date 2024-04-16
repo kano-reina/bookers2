@@ -8,8 +8,7 @@
     </tr>
     <tr>
       <% @books.each do |book| %>
-      <td><%= image_tag '' %></td>
-      <!-- こんな感じのやつ image_tag post_image.user.get_profile_image(100, 100), class: "mt-3 rounded-circle"; %> -->
+      <td><%= image_tag book.user.get_profile_image(100, 100) %></td>
       <td><%= book.title %></td>
       <td><%= book.body %></td>
       <% end %>

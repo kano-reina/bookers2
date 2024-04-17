@@ -6,7 +6,7 @@
     <p>Image</p>
     <%= f.file_field :profile_image, accept: "image/*" %>
     <p>Introduction</p> 
-    <%= f.text_field :introduction %>
+    <%= f.text_area :introduction %>
     <p><%= f.submit 'Update User' %></p>
   <% end %>
 </div>

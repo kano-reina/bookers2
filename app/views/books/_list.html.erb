@@ -1,5 +1,9 @@
 <% if Book.new.errors.any? %>
-  <%= Book.new.errors.count %>errors prohibited this obj from being saved:
+  <% if Book.new.errors.count == 1 %>
+    <%= Book.new.errors.count %>error prohibited this obj from being saved:
+  <% else%>
+    <%= Book.new.errors.count %>errors prohibited this obj from being saved:
+  <% end %>
   <ul>
     <%= Book.new.errors.full_messages.each do |message| %>
       <li><%= message %></li>

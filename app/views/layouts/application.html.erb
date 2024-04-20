@@ -11,14 +11,14 @@
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
-
   <body>
     <header class="bg-dark text-white pt-2 pb-2">
-      <%= link_to "Bookers", root_path %>
+      <%= link_to "Bookers", root_path, class:"text-light" %>
       <% if user_signed_in? %>
         <ul>
-          <i class="fa-solid fa-house"></i>
-          <%= link_to "Home", user_path(current_user) %>
+           <%= link_to user_path(current_user), class:"text-light" do %>
+             <i class="fa-solid fa-house"></i>Home
+           <% end %>
         </ul>
         <ul>
           <i class="fa-solid fa-users"></i>
@@ -39,7 +39,7 @@
         <ul>
           <%= link_to "About", about_path %>
         </ul>
-        <li>
+        <ul>
           <%= link_to "Sign up", new_user_registration_path %>
         </ul>
         <ul>
@@ -47,7 +47,11 @@
         </ul>
       <% end %>
     </header>
-    <%= yield %>
+    <main>
+    <p class="notice"><%= notice %></p>
+    <p class="alert"><%= alert %></p>
+    <%= yield %>      
+    </main>
     <footer>
       <p>CopyRight Infratop.inc</p>
     </footer>

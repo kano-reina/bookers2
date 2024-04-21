@@ -17,16 +17,17 @@
       <div>
         <h2>User info</h2>
         <%= image_tag current_user.get_profile_image(100, 100) %>
-        <table>
-          <tr><th>name</th><td><%= current_user.name %></td></tr>
+        <table class="table table-striped">
+          <tr style="background-color: white;"><th>name</th><td><%= current_user.name %></td></tr>
           <tr><th>introduction</th><td><%= current_user.introduction %></td></tr>
         </table>
       </div>
-      
-      <p><%= link_to edit_user_path(current_user) do %></p>
-        <i class="fa-solid fa-user-gear"></i>
-      <% end %>
-      
+      <div class="btn btn-outline-secondary btn-block">
+        <%= link_to edit_user_path(current_user) do %>
+          <i class="fa-solid fa-user-gear"></i>
+        <% end %>
+      </div>
+        
       <div>
         <h2>New book</h2>
         <%= form_with model: book do |f| %>
@@ -34,7 +35,7 @@
           <%= f.text_field :title %>
           <p>Opinion</p>
           <%= f.text_area :body %>
-          <p><%= f.submit 'Create Book' %></p>
+          <p><%= f.submit 'Create Book', class: "btn btn-success" %></p>
         <% end %>
       </div>  
     </div>
